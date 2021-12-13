@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<respostaConsultaIAE xmlns="http://www.aoc.cat/aeat/iae" xmlns:aeat="http://intermediacion.redsara.es/scsp/esquemas/datosespecificos">
+	<aeat:DatosEspecificos>
+		<aeat:Ejercicio/>
+	</aeat:DatosEspecificos>
+	<resultat>
+		<codiResultat>String</codiResultat>
+		<descripcio>String</descripcio>
+	</resultat>
+</respostaConsultaIAE>

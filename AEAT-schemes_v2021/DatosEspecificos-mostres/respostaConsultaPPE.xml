@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<respostaConsultaPPE xmlns="http://www.aocat.net/aeat/irpf" xmlns:aeat="http://intermediacion.redsara.es/scsp/esquemas/datosespecificos">
+	<aeat:DatosEspecificos>
+		<aeat:Ejercicio/>
+	</aeat:DatosEspecificos>
+	<resultat>
+		<codiResultat>String</codiResultat>
+		<descripcio>String</descripcio>
+	</resultat>
+</respostaConsultaPPE>

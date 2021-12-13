@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<respostaConsultaObligacionsTributaries xmlns="http://www.aocat.net/aeat/obligacions" xmlns:aeat="http://intermediacion.redsara.es/scsp/esquemas/datosespecificos">
+	<aeat:DatosEspecificos>
+		<aeat:Referencia/>
+		<aeat:FechaProceso/>
+		<aeat:NombreCompleto>String</aeat:NombreCompleto>
+	</aeat:DatosEspecificos>
+	<resultat>
+		<codiResultat>String</codiResultat>
+		<descripcio>String</descripcio>
+	</resultat>
+</respostaConsultaObligacionsTributaries>
