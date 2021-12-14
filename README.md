@@ -330,7 +330,7 @@ La següent modalitat permet obtenir el certificat IRPF d’un contribuent en un
 | _Element_ | _Descripció_ |
 | --- | --- |
 | respostaConsultaIRPF/DatosEspecificos/Cabecera/Referencia | Referència única de la resposta. |
-| respostaConsultaIRPF/DatosEspecificos/Cabecera/FechaEmision | Data de generació de la resposta (AAAA-MMDD). |
+| respostaConsultaIRPF/DatosEspecificos/Cabecera/FechaEmision | Data de generació de la resposta (AAAA-MM-DD). |
 | respostaConsultaIRPF/DatosEspecificos/Cabecera/Ejercicio| Exercici fiscal. |
 | respostaConsultaIRPF/DatosEspecificos/Cabecera/TipoRespuesta | Tipus de resposta: <ul><li>*IM*: imputacions </li><li>*IR*: renda</li></ul> |
 | respostaConsultaIRPF/DatosEspecificos/Imputaciones | Bloc de dades corresponent a les imputacions. Per més detalls vegeu l’apartat [3.4.3.1](#3.4.3.1) d’aquest document. |
@@ -542,10 +542,10 @@ exercici fiscal determinat
 | _Element_ | _Descripció_ |
 | --- | --- |
 | respostaConsultaPPE/DatosEspecificos/Cabecera/Referencia | Referència única de la resposta. |
-| respostaConsultaPPE/DatosEspecificos/Cabecera/FechaEmision | Data de generació de la resposta (AAAA-MMDD). |
+| respostaConsultaPPE/DatosEspecificos/Cabecera/FechaEmision | Data de generació de la resposta (AAAA-MM-DD). |
 | respostaConsultaPPE/DatosEspecificos/Cabecera/Ejercicio | Exercici fiscal. |
-| respostaConsultaPPE/DatosEspecificos/PensionesPublicasExentas/NumeroRegistrosExistentes| Número total de registres de Pensions Públiques Exemptes del titular i exercici sol·licitat existents en el sistema de l’AEAT. |
-| respostaConsultaPPE/DatosEspecificos/PensionesPublicasExentas/NumeroRegistrosFacilitados | Número de Pensions Públiques Exemptes retornades en la resposta (màxim 200) |
+| respostaConsultaPPE/DatosEspecificos/PensionesPublicasExentas<br/>/NumeroRegistrosExistentes| Número total de registres de Pensions Públiques Exemptes del titular i exercici sol·licitat existents en el sistema de l’AEAT. |
+| respostaConsultaPPE/DatosEspecificos/PensionesPublicasExentas<br/>/NumeroRegistrosFacilitados | Número de Pensions Públiques Exemptes retornades en la resposta (màxim 200) |
 | respostaConsultaPPE/DatosEspecificos/PensionPublicaExenta | Bloc de dades corresponent a un registre de Pensió Pública Exempta. Per més detalls vegeu l’apartat [3.6.3.1](#3.6.3.1) d’aquest document. |
 | respostaConsultaIRPF/resultat/codiResultat | Codi de resultat de la consulta. Per més detalls vegeu l’apartat 00 d’aquest document. |
 | respostaConsultaIRPF/resultat/resultat/descripcio| Descripció del resultat |
@@ -604,7 +604,7 @@ La següent modalitat permet consultar les dades cadastrals d’un contribuent e
 | _Element_ | _Descripció_ |
 | --- | --- |
 | respostaConsultaINFOCAT/DatosEspecificos/Cabecera/Referencia| Referència única de la resposta. |
-| respostaConsultaINFOCAT/DatosEspecificos/Cabecera/FechaEmision| Data de generació de la resposta (AAAA-MMDD). |
+| respostaConsultaINFOCAT/DatosEspecificos/Cabecera/FechaEmision| Data de generació de la resposta (AAAA-MM-DD). |
 | respostaConsultaINFOCAT/DatosEspecificos/Cabecera/Ejercicio | Exercici fiscal |
 | respostaConsultaINFOCAT/DatosEspecificos/Inmuebles/NumeroRegistrosExistentesTotal | Número total de registres de immobles existents del Padró de Rústica i del Padró d’Urbana pel NIF i exercicis sol·licitats. |
 | respostaConsultaINFOCAT/DatosEspecificos/Inmuebles/NumeroRegistrosFacilitadosTotal| Número total de registres de immobles facilitats del Padró de Rústica i del Padró d’Urbana pel NIF i exercicis sol·licitats. |
@@ -649,7 +649,7 @@ La següent modalitat permet consultar les dades cadastrals d’un contribuent e
 | //DatosImmueble/CalidadReferenciaCatastral | Qualitat de la referència cadastral: <ul><li>0: correcta</li><li>1: incorrecta</li></ul>|
 
 <p align="center">
-<img align="center" src="img/DatosInmueble.png" />
+<img align="center" src="img/datosInmueble.png" />
 </p>
 
 #### 3.7.3.2 Codis de resultat <a name="3.7.3.2"></a>
