@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<respostaConsultaDomiciliFiscal xmlns="http://www.aocat.net/aeat/domicilifiscal" xmlns:aeat="http://www.aeat.es/ns_SCPWIJ1R/respuesta">
+	<aeat:DatosEspecificos>
+		<aeat:CABECERA>
+			<aeat:REFERENCIA_S/>
+			<aeat:FECHA_EMISION_S/>
+			<aeat:TIPO_RESPUESTA_S/>
+			<aeat:NOMBRE_COMPLETO_S>String</aeat:NOMBRE_COMPLETO_S>
+		</aeat:CABECERA>
+		<aeat:DIRECCION>
+			<aeat:ADMON_FISC_S/>
+			<aeat:TIPO_DOMI_S/>
+			<aeat:FECH_DOMI_S/>
+			<aeat:TIPO_VIA_S/>
+			<aeat:CODIGO_VIA_S/>
+			<aeat:VIAPBL_S/>
+			<aeat:VIAPBC_S/>
+			<aeat:TIPO_NUM_S/>
+			<aeat:NUMERO_EN_S/>
+			<aeat:CALIF_NUM_S/>
+			<aeat:BLOQUE_S/>
+			<aeat:PORTAL_S/>
+			<aeat:ESC_S/>
+			<aeat:PISO_S/>
+			<aeat:PTA_S/>
+			<aeat:COMPLEMENTO_S/>
+			<aeat:POBLACION_S/>
+			<aeat:CODPOST_S/>
+			<aeat:CODMUNI_S/>
+			<aeat:MUNICIPIO_S/>
+			<aeat:CODPROV_S/>
+			<aeat:NOMPROV_S/>
+			<aeat:E_MAIL_S/>
+			<aeat:TFNO_FIJO_S/>
+			<aeat:TFNO_MOVIL_S/>
+			<aeat:FAX_S/>
+		</aeat:DIRECCION>
+	</aeat:DatosEspecificos>
+	<resultat>
+		<codiResultat>String</codiResultat>
+		<descripcio>String</descripcio>
+	</resultat>
+</respostaConsultaDomiciliFiscal>
