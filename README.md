@@ -434,17 +434,19 @@ El servei de l'IRPF presenta canvis al bloc <i>DatosEspecificos</i> de la missat
 de l'exercici 2020 segons el següent schema. En aquests casos, es retornen totes les caselles de la
 declaració que no incompleixen la declaració de dades.
 
+
+
+Així, per aquests exercicis els nodes que vindran informats en cas que hi hagi renda són els elements
+<i>Declaracion</i> (en cada exercici definit per un <i>namespace</i> propi)  i <i>NivelRentaDeclaracion</i> enlloc de l'element <i>irpf</i> informat fins l'exercici 2019.
+
 <p align="center">
 <img align="center" src="img/respostaConsultaIRPF.png" />
 </p>
 
-Així, per aquests exercicis els nodes que vindran informats en cas que hi hagi renda són els elements
-<i>Declaracion</i> i <i>NivelRentaDeclaracion</i> enlloc de l'element <i>irpf</i> informat fins l'exercici 2019.
-
 Per tal de conèixer el significat dels elements de la resposta de cada exercici, cal utilitzar un diccionari
 de dades que està publicat a la seu electrònica de l'AEAT
 
-https://www.agenciatributaria.es/AEAT.internet/Inicio/Ayuda/Disenos_de_registro/Modelos_100_al_199/Modelos_100_al_199.shtml
+https://sede.agenciatributaria.gob.es/Sede/ayuda/disenos-registro/modelos-100-199.html
 
 
 Pel que fa al diccionari i als paràmetres de les dades subministrades, s'han d'interpretar de la següent manera:
