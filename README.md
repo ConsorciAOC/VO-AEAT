@@ -501,13 +501,10 @@ com a les específiques).
 ### 3.5.2 Resposta <a name="3.5.2"></a>
 
 La missatgeria de resposta és idèntica a la de consulta del IRPF.
+A diferència del certificat d’IRPF, en cas que el titular hagi presentat la declaració del IRPF (*TipoRespuesta = IR o DL a partir de l’exercici 2020*) en l’exercici sol·licitat el servei informarà l’element Importes segons correspongui en funció de les dades consultades.
+Si el contribuent no presenta declaració de IRPF per no tenir obligació (*TipoRespuesta = IM*) es subministren les set dades procedents d’imputacions de tercers detallades en la modalitat anterior.
+ 
 
-A diferència del certificat d’IRPF, en cas que el titular hagi presentat la declaració del IRPF
-(*TipoRespuesta = IR*) en l’exercici sol·licitat el servei informarà l’element *Importes* segons
-correspongui en funció de les dades consultades.
-
-Si el contribuent no presenta declaració de IRPF per no tenir obligació (*TipoRespuesta = IM*) es
-subministren les set dades procedents d’imputacions de tercers detallades en la modalitat anterior.
 
 
 <p align="center">
