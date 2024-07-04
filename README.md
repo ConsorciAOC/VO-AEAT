@@ -8,31 +8,6 @@ Podreu trobar els XSD's del servei en aquest repositori sota el directori [/sche
 ### Informació general
 
 | **Títol:** | Via Oberta – AEAT. Document d’integració del servei|
-| --- | --- |
-| **Creat per:** | Àrea de Tecnologia – Unitat de Projectes |
-| **A revisar per:** | Àrea de Tecnologia – Unitat de Suport |
-| **A aprovar per:** | Àrea de Tecnologia – Unitat de Suport |
-| **Llista de distribució:** | |
-| **Nom del document:** | DI - Via Oberta - AEAT.doc |
-
-### Històric de revisions
-
-| **Versió** | **Data** | **Autor** | **Comentaris** |
-| --- | --- | --- | --- |
-| V1.1 | 21/03/2011 |  Roger Noguera i Arnau | Creació del document |
-| V1.2 | 16/04/2012 | Roger Noguera i Arnau  | Incorporació de modalitats d’IRPF i nous codis de producte.	 |
-| V1.3 | 10/10/2012 | Roger Noguera i Arnau  | Nova codificació del productes |
-| V2.0 | 21/11/2012 | Roger Noguera i Arnau  | AEAT10X: nous codis de retorn. IRPF:<br/> elements de corresponents a part entera i decimal de les caselles opcionals arran de canvis en el servei de l’emissor. |
-| V2.1 | 01/03/2013 | Roger Noguera i Arnau  | Incorporació de modalitat Pensions Públiques Exemptes (PPE)  |
-| V2.2 | 06/09/2013 |Roger Noguera i Arnau   | Adaptacions de missatgeria derivats de nou servei IRPF de l’AEAT |
-| V2.3 | 04/06/2014 | Roger Noguera i Arnau  | Revisió de les modalitats AEATIAE i SCPWIJ1R arran dels canvis de plataforma a l’AEAT (missatgeria compatible). Obligatorietat d’informar les dades del funcionari. |
-| V2.4|  07/07/2014 | Llorenç Camps Vicente | PPE: dades passen a oferir-se al mateix temps que les de Renda (principis de Juliol enlloc i no en Abril).<br/>IRPF C5: substitució de la modalitat C5 per la modalitat dedicada de IRPF_RENDA_AGRARIA.<br/> Noves modalitats ECOT10X en substitució de de les modalitats AEAT10X que s’extingeixen.|
-| 3.0  | 01/08/2016 | Roger Noguera i Arnau | Incorpora modalitat INFOCAT. |
-| 3.1  | 26/01/2017 | Sergi Niñà Pumar | Afegir informació joc de proves PPE. |
-| 3.2  | 06/04/2017 | Roger Noguera i Arnau | Incorpora modalitat VERIFICAR_NIF. |
-| 3.3  | 09/02/2018 | Roger Noguera i Arnau | Correcció errates a INFOCAT: FechaInicioTitularidad, FechaFinTitularidad. |
-| 3.4  | 24/01/2020 | Roger Noguera i Arnau | IRPF i Cx: incorporació codi de retorn 1024. |
-| 4.0  | 14/06/2021 | Roger Noguera i Arnau | Canvi missatgeria resposta IRPF a partir de l’exercici 2020. |
 
 ### Índex
 
@@ -141,7 +116,7 @@ Consulta del conjunt d’epígrafs de l’Impost d’Activitats Econòmiques (en
 | //DatosEspecificos/Actividades/FechaInicio  | Dada d’alta en l’activitat (AAAA-MM-DD). |
 | /DatosEspecificos/Actividades/FechaFin | Dada de baixa en l’activitat (AAAA-MM-DD). |
 | //DatosEspecificos/Actividades/Referencia | Referència o clau que identifica cada activitat econòmica. |
-| respostaConsultaIAE/resultat/codiResultat | Codi de resultat de la consulta. Per més detalls vegeu l’apartat 0 d’aquest document. |
+| respostaConsultaIAE/resultat/codiResultat | Codi de resultat de la consulta. Per més detalls vegeu l’apartat [3.1.2.1](#3.1.2.1)  d’aquest document. |
 | respostaConsultaIAE/resultat/descripcio | Descripció del resultat. |
 
 <p align="center">
@@ -205,7 +180,7 @@ Consulta del domicili fiscal d’un contribuent.
 | //DatosEspecificos/DIRECCION/TFNO_FIJO_S  |  Telèfon fix. |
 | //DatosEspecificos/DIRECCION/TFNO_MOVIL_S  | Telèfon mòbil. |
 | //DatosEspecificos/DIRECCION/FAX_S  | Fax. |
-| respostaConsultaDomiciliFiscal/resultat/codiResultat| Codi de resultat de la consulta. Per més detalls vegeu l’apartat 0 d’aquest document |
+| respostaConsultaDomiciliFiscal/resultat/codiResultat| Codi de resultat de la consulta. Per més detalls vegeu l’apartat [3.1.2.1](#3.2.2.1)  d’aquest document |
 | respostaConsultaDomiciliFiscal/resultat/descripcio | Descripció del resultat. |
 
 <p align="center">
@@ -263,13 +238,13 @@ En les respostes s'indica el caràcter positiu o negatiu de la certificació i e
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>Referencia| Referència única de la resposta. |
 | respostaConsultaObligacionsTributaries/DatosEspecificos<br/>FechaEmision| Data en la que és vàlida la resposta (AAAA-MM-DD). |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/CodigoCertificado | Indica si el contribuent està al corrent o no de obligacions tributàries. Els possibles valors que pot tenir són POSITIVO o NEGATIVO. |
-| respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/TipoNegativo| Codi de la causa en cas de no estar al corrent de pagament. Per més detalls vegeu l’apartat d’aquest [3.3.2.1](#3.3.2.1) document |
+| respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/TipoNegativo| Codi de la causa en cas de no estar al corrent de pagament. Per més detalls vegeu l’apartat d’aquest [3.4.2.1](#3.4.2.1) document |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/Incumplimientos/NumeroRegistrosExistentes | Número total d’incompliments |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/Incumplimientos/NumeroRegistrosFacilitados | Número d’incompliments. |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/Incumplimientos/DatosIncumplimiento/Ejercicio| Exercici de l’incompliment. |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/Incumplimientos/DatosIncumplimiento/Modelo | Model tributari associat a l’incompliment. |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/Incumplimientos/DatosIncumplimiento/Periodo| Període associat a l’incompliment. |
-| respostaConsultaObligacionsTributaries/resultat/codiResultat| Codi de resultat de la consulta. Per més detalls vegeu l’apartat [3.3.2.2](#3.3.2.2) d’aquest document.|
+| respostaConsultaObligacionsTributaries/resultat/codiResultat| Codi de resultat de la consulta. Per més detalls vegeu l’apartat [3.4.2.2](#3.4.2.2) d’aquest document.|
 | respostaConsultaObligacionsTributaries/resultat/descripcio| Descripció del resultat. |
 
 
@@ -418,13 +393,14 @@ La següent modalitat permet obtenir el certificat IRPF d’un contribuent en un
 | //DatosCola/DCDatosInmuebles/DCNumInmuebles/DCUso | Ús de l’immoble: *Arrendamiento, A disposición de sus titulares, Arrendamiento y a disposición de sus titulares*. |
 | //DatosCola/DCDatosInmuebles/DCNumInmuebles/DCRentaImputada | Renda imputada a l’immoble |
 
-3.4.3.3 Codis de resultat
+##### 3.4.3.3 Codis de resultat <a name="3.4.3.3"></a>
 
 <ul>
-	<li>1000: Titular identificat <br/> Si ha presentat declaració d’IRPF en l’exercici sol·licitat es faciliten les dades de renda del declarant (TipoRespuesta = IR). Si el contribuent no presenta declaració de IRPF per no tenir obligació (TipoRespuesta = I es subministren set dades procedents d’imputacions de tercers que corresponen a: <br/>1. Rendiments del treball. <br/>2. Retencions de rendiments del treball.<br/>3. Rendiments del capital mobiliari.<br/>4. Retencions del capital mobiliari.<br/>5. Guanys patrimonials sotmesos a retenció.<br/>6. Retencions de guanys patrimonials.<br/>7. Despeses deduïbles de rendiments de treball.</li>
+	<li>1000: Titular identificat <br/> Si ha presentat declaració d’IRPF en l’exercici sol·licitat es faciliten les dades de renda del declarant (TipoRespuesta = IR). <br>Si el contribuent no presenta declaració de IRPF per no tenir obligació (TipoRespuesta = I es subministren set dades procedents d’imputacions de tercers.
 	<li>1002: Titular no identificat.</li>
 	<li>1008: Titular no ha presentat la declaració. L’interessat ha de regularitzar la situació a l’administració tributària que li correspongui. </li>
 	<li>1009: No existeix cap imputació rellevant. No consta declaració de l’impost per no figurar obligat i no figuren imputacions de l’interessat</li>
+	<li>1010: Exercici no disponible.</li>
 	<li>1011: Existeixen diverses declaracions. No es facilita informació. </li>
 	<li>1024: El titular no té consideració de contribuent per aquest impost</li>
 	<li>0502: Error en la comunicació amb l’emissor final.</li>
@@ -537,7 +513,7 @@ exercici fiscal determinat
 
 | _Element_ | _Descripció_ |
 | --- | --- |
-| peticioConsultaPPE/DatosEspecificos/Ejercicio  | Exercici fiscal. El servei ofereix els darrers 5 exercicis des de la data de sol·licitud. <br/> Cada exercici estarà disponible al mateix temps que les dades de renda (principis de Juliol). |
+| peticioConsultaPPE/DatosEspecificos/Ejercicio  | Exercici fiscal. El servei ofereix els darrers 5 exercicis des de la data de sol·licitud. <br><br>Cada exercici estarà disponible al mateix temps que les dades de renda (principis de Juliol). |
 
 ### 3.6.3 Petició – dades específiques <a name="3.6.3"></a>
 
@@ -548,8 +524,8 @@ exercici fiscal determinat
 | respostaConsultaPPE/DatosEspecificos/Cabecera/Ejercicio | Exercici fiscal. |
 | respostaConsultaPPE/DatosEspecificos/PensionesPublicasExentas<br/>/NumeroRegistrosExistentes| Número total de registres de Pensions Públiques Exemptes del titular i exercici sol·licitat existents en el sistema de l’AEAT. |
 | respostaConsultaPPE/DatosEspecificos/PensionesPublicasExentas<br/>/NumeroRegistrosFacilitados | Número de Pensions Públiques Exemptes retornades en la resposta (màxim 200) |
-| respostaConsultaPPE/DatosEspecificos/PensionPublicaExenta | Bloc de dades corresponent a un registre de Pensió Pública Exempta. Per més detalls vegeu l’apartat [3.6.3.1](#3.6.3.1) d’aquest document. |
-| respostaConsultaIRPF/resultat/codiResultat | Codi de resultat de la consulta. Per més detalls vegeu l’apartat 00 d’aquest document. |
+| respostaConsultaPPE/DatosEspecificos/PensionPublicaExenta | Bloc de dades corresponent a un registre de Pensió Pública Exempta. Per més detalls vegeu l’apartat [3.7.3.1](#3.7.3.1) d’aquest document. |
+| respostaConsultaIRPF/resultat/codiResultat | Codi de resultat de la consulta. Per més detalls vegeu l’apartat [3.7.3.2](#3.7.3.2) d’aquest document. |
 | respostaConsultaIRPF/resultat/resultat/descripcio| Descripció del resultat |
 
 
@@ -613,12 +589,12 @@ La següent modalitat permet consultar les dades cadastrals d’un contribuent e
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronRustica| Bloc de dades corresponent als immobles del Padró de Rústica. |
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronRustica/NumeroRegistrosExistentesPRU | Número total de registres de immobles existents del Padró de Rústica pel NIF i exercicis sol·licitats |
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronRustica/NumeroRegistrosFacilitadosPRU | Número total de registres de immobles facilitats del Padró de Rústica pel NIF i exercicis sol·licitats. |
-| respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronRustica/DatosInmueble | Dades de l’immoble. Per més detalls vegeul’apartat 00 d’aquest document. |
+| respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronRustica/DatosInmueble | Dades de l’immoble. Per més detalls vegeul’apartat [3.7.3.1](#3.7.3.1) d’aquest document. |
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronUrbana | Bloc de dades corresponent als immobles del Padró d’Urbana. |
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronUrbana/NumeroRegistrosExistentesPUR | Número total de registres de immobles existents del Padró d’Urbana pel NIF i exercicis sol·licitats. |
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronUrbana/NumeroRegistrosFacilitadosPUR | Número total de registres de immobles facilitats del Padró d’Urbana pel NIF i exercicis sol·licitats. |
-| respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronUrbana/DatosInmueble | Dades de l’immoble. Per més detalls vegeul’apartat 00 d’aquest document. |
-| respostaConsultaINFOCAT/resultat/codiResultat | Codi de resultat de la consulta. Per més detalls vegeu l’apartat 00 d’aquest document. |
+| respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronUrbana/DatosInmueble | Dades de l’immoble. Per més detalls vegeul’apartat [3.7.3.1](#3.7.3.1) d’aquest document. |
+| respostaConsultaINFOCAT/resultat/codiResultat | Codi de resultat de la consulta. Per més detalls vegeu l’apartat [3.7.3.2](#3.7.3.2) d’aquest document. |
 | respostaConsultaIRPF/resultat/resultat/descripcio | Descripció del resultat. |
 
 
