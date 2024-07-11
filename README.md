@@ -267,7 +267,8 @@ En les respostes s'indica el caràcter positiu o negatiu de la certificació i e
 | S | "No está al corriente de obligaciones tributarias por delito fiscal y baja censal detectada"  |
 | T | "No está al corriente de obligaciones tributarias por incumplimiento de presentación de declaraciones o autoliquidaciones, constancia de deudas tributarias en periodo ejecutivo, delito fiscal y baja censal detectada" |
 | U | "No está al corriente de obligaciones tributarias por incumplimiento de presentación de declaraciones o autoliquidaciones, delito fiscal y baja censal detectada |
-| V | "No está al corriente de pago de deudas tributarias en periodo ejecutivo, delito fiscal y baja censal detectada "  |
+| V | "No está al corriente de pago de deudas tributarias en periodo ejecutivo, delito fiscal y baja censal detectada"  |
+| X | "No está al corriente de obligaciones tributarias por incumplimiento de presentación de declaraciones o autoliquidaciones, constancia de deudas tributarias en periodo ejecutivo y baja censal detectada"  |
 
 #### 3.3.2.2 Codis de resultat <a name="3.3.2.2"></a>
 
@@ -396,12 +397,18 @@ La següent modalitat permet obtenir el certificat IRPF d’un contribuent en un
 ##### 3.4.3.3 Codis de resultat <a name="3.4.3.3"></a>
 
 <ul>
-	<li>1000: Titular identificat <br/> Si ha presentat declaració d’IRPF en l’exercici sol·licitat es faciliten les dades de renda del declarant (TipoRespuesta = IR). <br>Si el contribuent no presenta declaració de IRPF per no tenir obligació (TipoRespuesta = I es subministren set dades procedents d’imputacions de tercers.
-	<li>1002: Titular no identificat.</li>
-	<li>1008: Titular no ha presentat la declaració. L’interessat ha de regularitzar la situació a l’administració tributària que li correspongui. </li>
+	<li>1000: Titular identificat <br/> Si ha presentat declaració d’IRPF en l’exercici sol·licitat es faciliten les dades de renda de la persona declarant (TipoRespuesta = IR; DL, per exercicis iguals i posteriors a 2020).<br>Si el contribuent no presenta declaració d’IRPF per no tenir-hi obligació (TipoRespuesta = IM), es subministren set dades de renda procedents d’imputacions de tercers que corresponen a:<br>1. Rendiments del treball.
+<br>2. Retencions de rendiments del treball.
+<br>3. Rendiments del capital mobiliari.
+<br>4. Retencions del capital mobiliari.
+<br>5. Guanys patrimonials sotmesos a retenció.
+<br>6. Retencions de guanys patrimonials.
+<br>7. Despeses deduïbles de rendiments de treball.
+</ul>
+<ul>	
 	<li>1009: No existeix cap imputació rellevant. No consta declaració de l’impost per no figurar obligat i no figuren imputacions de l’interessat</li>
 	<li>1010: Exercici no disponible.</li>
-	<li>1011: Existeixen diverses declaracions. No es facilita informació. </li>
+	<li>1011: Existeixen diverses declaracions o una de complementària. No es facilita informació. </li>
 	<li>1024: El titular no té consideració de contribuent per aquest impost</li>
 	<li>0502: Error en la comunicació amb l’emissor final.</li>
 
