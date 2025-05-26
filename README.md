@@ -1,7 +1,7 @@
 # Via Oberta – Agència Tributària (AEAT)
 Document d’integració del servei.
 
-Podreu trobar els XSD's del servei en aquest repositori sota el directori [/schema](https://github.com/ConsorciAOC/VO-AEAT/tree/main/AEAT-schemes_v2021).
+Podreu trobar els XSD's del servei en aquest repositori sota el directori [/schema](https://github.com/ConsorciAOC/VO-AEAT/tree/main/esquemes_XSD).
 
 ## Control del document
 
