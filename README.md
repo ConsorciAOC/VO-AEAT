@@ -67,6 +67,7 @@ Les dades disponibles a través del servei són les que es presenten a continuac
 | AEAT_DADES | Dades tributàries | ECOT102 | Obligacions tributàries per a autorització de transport. |
 | AEAT_DADES | Dades tributàries | ECOT103 | Obligacions tributàries per a subvencions i ajuda. |
 | AEAT_DADES | Dades tributàries | ECOT104 | Obligacions tributàries per a permisos de residència i treball. |
+| AEAT_DADES | Dades tributàries | ECOTGEN | Obligacions tributàries - genèric. |
 | AEAT_DADES | Dades tributàries | SCPWIJ1R | Consulta del domicili fiscal d’un contribuent. |
 | AEAT_DADES | Dades tributàries | INFOCAT | Consulta de dades cadastrals d’un contribuent. |
 | AEAT_DADES | Dades tributàries | VERIFICAR_NIF | Verificació de NIF (qualitat de dades identificatives). |
