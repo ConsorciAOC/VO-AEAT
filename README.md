@@ -28,24 +28,25 @@ Podreu trobar els XSD's del servei en aquest repositori sota el directori [/sche
 		* [3.4.2 Petició – dades específiques](#3.4.2)
 		* [3.4.3 Resposta – dades específiques (exercicis 2019 i anteriors)](#3.4.3)
 		* [3.4.4 Resposta – dades específiques (exercicis 2020 i posteriors)](#3.4.4)
-   * [3.5. Certificats de renda d’un contribuent (Cx)](#3.5)
-	    * [3.5.1 Petició](#3.5.1)
-		* [3.5.2 Resposta](#3.5.2)
-   * [3.6. Pensions Públiques Exemptes (PPE)](#3.6)
-	    * [3.6.1 Petició – dades genèriques](#3.6.1)
-		* [3.6.2 Petició – dades específiques](#3.6.2)
-		* [3.6.3 Resposta – dades específiques](#3.6.3)
-   * [3.7 Dades cadastrals (INFOCAT))](#3.7)
+   * [3.5. Certificat IRPF d’un contribuent](#3.5)
+		* [3.5.1 Petició – dades genèriques](#3.5.1)
+		* [3.5.2 Petició – dades específiques](#3.5.2)
+		* [3.5.3 Resposta – dades específiques (exercicis 2019 i anteriors)](#3.5.3)
+		* [3.5.4 Resposta – dades específiques (exercicis 2020 i posteriors)](#3.5.4)
+   * [3.6. Certificats de renda d’un contribuent (Cx)](#3.6)
+	    * [3.6.1 Petició](#3.6.1)
+		* [3.6.2 Resposta](#3.6.2)
+   * [3.7. Pensions Públiques Exemptes (PPE)](#3.7)
 	    * [3.7.1 Petició – dades genèriques](#3.7.1)
 		* [3.7.2 Petició – dades específiques](#3.7.2)
 		* [3.7.3 Resposta – dades específiques](#3.7.3)
-   * [3.7 Dades cadastrals (INFOCAT))](#3.7)
-	    * [3.7.1 Petició – dades genèriques](#3.7.1)
-		* [3.7.2 Petició – dades específiques](#3.7.2)
-		* [3.7.3 Resposta – dades específiques](#3.7.3)
-	* [3.8 Verificació de NIF – qualitat de dades identificatives (VALIDAR_NIF)](#3.8)
-	    * [3.8.1 Petició – dades especifiques](#3.8.1)
-		* [3.8.2 Resposta – dades específiques](#3.8.2)
+   * [3.8 Dades cadastrals (INFOCAT))](#3.8)
+	    * [3.8.1 Petició – dades genèriques](#3.8.1)
+		* [3.8.2 Petició – dades específiques](#3.8.2)
+		* [3.8.3 Resposta – dades específiques](#3.8.3)
+   	* [3.9 Verificació de NIF – qualitat de dades identificatives (VALIDAR_NIF)](#3.9)
+	    * [3.9.1 Petició – dades especifiques](#3.9.1)
+		* [3.9.2 Resposta – dades específiques](#3.9.2)
 
 ## 1 Introducció <a name="1"></a>
 Aquest document detalla la missatgeria associada al servei de consulta d’informació associada als diferents serveis de l’Agència Tributària (en endavant AEAT).
@@ -284,13 +285,57 @@ En les respostes s'indica el caràcter positiu o negatiu de la certificació i e
 	<li>0502: Error en la comunicació amb l’emissor final.</li>
 </ul>
 
-## 3.4 Certificat IRPF d’un contribuent <a name="3.4"></a>
+
+## 3.4 Consulta d’estar al corrent de pagament d’obligacions tributàries – genèric (ECOTGEN) <a name="3.4"></a>
+
+La finalitat d’aquesta modalitat és certificar si una persona o entitat es troba al corrent de les seves obligacions tributàries conforme al establert en l’article 74 del *Reglamento General de las actuaciones y los procedimientos de gestión e inspección tributaria y de desarrollo de las normas comunes de los procedimientos de aplicación de los tributos*, aprovat pel *Real Decreto 1065/2007, de 27 de julio*.
+
+En aquest subministrament s’indicarà el caràcter positiu o negatiu de la certificació per l’exercici actual.
+
+En els certificats **negatius** s’indicarà el **motiu o motius** de l’incompliment:
+
+1. Manca de presentació d’una autoliquidació o declaració a la que el contribuent estigués obligat a presentar en els darrers dotze mesos precedents als dos mesos immediatament anteriors a la data de sol·licitud.
+2. Manteniment de deutes o sancions tributàries en període executiu amb l’Agència Tributària sense que aquestes es trobin ajornades, fraccionades o suspeses.
+3. Tenir pendents d’ingrés responsabilitats civils derivades de delicte contra la Hisenda Pública declarades per sentència ferma.
+4. No estar donat d’alta en el cens d’empresaris, professionals o retenidors, quan es tracti de persones o entitats obligades a estar en aquest cens i no estar donat d’alta en l’Impost sobre Activitats Econòmiques, quan es tracti de subjectes passius no exempts de l’impost.
+
+#### 3.4.1 Petició – dades genèriques <a name="3.4.1"></a>
+
+| Element | Descripció |
+|--------|------------|
+| `//DatosGenericos/Titular/TipoDocumentacion` | Tipus de documentació (NIF, NIE, CIF). |
+| `//DatosGenericos/Titular/Documentacion` | Documentació. |
+| `//DatosGenericos/Titular/NombreCompleto` | Nom complert del contribuent. Requerit únicament en cas de persona física. Alternativament es poden informar els elements `Nombre`, `Apellido1` i `Apellido2` del mateix bloc `Titular`. |
+
+#### 3.4.2 Resposta – dades específiques <a name="3.4.2"></a>
+
+| Element | Descripció |
+|--------|------------|
+| `respostaConsultaObligacionsTributaries/DatosEspecificos/Referencia` | Referència única de la resposta. |
+| `.../FechaEmision` | Data en la que és vàlida la resposta (AAAA-MM-DD). |
+| `.../ObligacionesTributarias/CodigoCertificado` | Indica si el contribuent està al corrent o no de les obligacions tributàries (valors: `POSITIVO` o `NEGATIVO`). |
+| `.../TipoNegativo` | Codi de la causa en cas de **no estar** al corrent de pagament [3.3.2.1](#3.3.2.1). |
+| `.../CausaNegatividad` | Causa literal per la qual s'emet un certificat NEGATIVO. |
+| `.../Incumplimientos/NumeroRegistrosExistentes` | Número total d’incompliments. |
+| `.../Incumplimientos/NumeroRegistrosFacilitados` | Número d’incompliments facilitats. |
+| `.../Incumplimientos/DatosIncumplimiento/Ejercicio` | Exercici de l’incompliment. |
+| `.../DatosIncumplimiento/Modelo` | Model tributari associat a l’incompliment. |
+| `.../DatosIncumplimiento/Periodo` | Període associat a l’incompliment. |
+| `resultat/codiResultat` | Codi de resultat de la consulta [3.3.2.2](#3.3.2.2). |
+| `resultat/descripcio` | Descripció del resultat. |
+
+<p align="center">
+<img align="center" src="img/ECOTEGEN1.png" />
+</p>
+
+
+## 3.5 Certificat IRPF d’un contribuent <a name="3.5"></a>
 
 La següent modalitat permet obtenir el certificat IRPF d’un contribuent en un exercici fiscal determinat.
 
 >:warning: La declaració Individual o Conjunta és una característica de la pròpia declaració però la informació de les partides que conté no és pot disgregar. Així, no es diferencia el que pertany al Declarant o el que pertany al Cònjuge
 
-### 3.4.1 Petició – dades genèriques <a name="3.4.1"></a>
+### 3.5.1 Petició – dades genèriques <a name="3.5.1"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -298,13 +343,13 @@ La següent modalitat permet obtenir el certificat IRPF d’un contribuent en un
 | //DatosGenericos/Titular/Documentacion | Documentació. |
 | //DatosGenericos/Titular/NombreCompleto | Nom complert del contribuent. Requerit únicament en cas de persona física.<br/> Alternativament es poden informar els elements *Nombre, Apellido1* i *Apellido2* del mateix bloc *Titular*.|
 
-### 3.4.2 Petició – dades específiques <a name="3.4.2"></a>
+### 3.5.2 Petició – dades específiques <a name="3.5.2"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
 | peticioConsultaIRPF/DatosEspecificos/Ejercicio  |  Exercici fiscal.  |
 
-### 3.4.3 Resposta – dades específiques (exercicis 2019 i anteriors) <a name="3.4.3"></a>
+### 3.5.3 Resposta – dades específiques (exercicis 2019 i anteriors) <a name="3.5.3"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -312,12 +357,12 @@ La següent modalitat permet obtenir el certificat IRPF d’un contribuent en un
 | respostaConsultaIRPF/DatosEspecificos/Cabecera/FechaEmision | Data de generació de la resposta (AAAA-MM-DD). |
 | respostaConsultaIRPF/DatosEspecificos/Cabecera/Ejercicio| Exercici fiscal. |
 | respostaConsultaIRPF/DatosEspecificos/Cabecera/TipoRespuesta | Tipus de resposta: <ul><li>*IM*: imputacions </li><li>*IR*: renda</li></ul> |
-| respostaConsultaIRPF/DatosEspecificos/Imputaciones | Bloc de dades corresponent a les imputacions. Per més detalls vegeu l’apartat [3.4.3.1](#3.4.3.1) d’aquest document. |
-| respostaConsultaIRPF/DatosEspecificos/irpf | Bloc de dades corresponent a les dades d’IRPF. Per més detalls vegeu l’apartat [3.4.3.2](#3.4.3.2) d’aquest document. |
+| respostaConsultaIRPF/DatosEspecificos/Imputaciones | Bloc de dades corresponent a les imputacions. Per més detalls vegeu l’apartat [3.5.3.1](#3.5.3.1) d’aquest document. |
+| respostaConsultaIRPF/DatosEspecificos/irpf | Bloc de dades corresponent a les dades d’IRPF. Per més detalls vegeu l’apartat [3.5.3.2](#3.5.3.2) d’aquest document. |
 | respostaConsultaIRPF/resultat/codiResultat  | Codi de resultat de la consulta. Per més detalls vegeu l’apartat 0 d’aquest document.|
 | respostaConsultaIRPF/resultat/resultat/descripcio | Descripció del resultat. |
 
-#### 3.4.3.1 Imputacions <a name="3.4.3.1"></a>
+#### 3.5.3.1 Imputacions <a name="3.5.3.1"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -328,7 +373,7 @@ La següent modalitat permet obtenir el certificat IRPF d’un contribuent en un
 | //Imputaciones/DatosEconomicos/Decimales |  |
 | //Imputaciones/Cola |  |
 
-#### 3.4.3.2 IRPF <a name="3.4.3.2"></a>
+#### 3.5.3.2 IRPF <a name="3.5.3.2"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -394,7 +439,7 @@ La següent modalitat permet obtenir el certificat IRPF d’un contribuent en un
 | //DatosCola/DCDatosInmuebles/DCNumInmuebles/DCUso | Ús de l’immoble: *Arrendamiento, A disposición de sus titulares, Arrendamiento y a disposición de sus titulares*. |
 | //DatosCola/DCDatosInmuebles/DCNumInmuebles/DCRentaImputada | Renda imputada a l’immoble |
 
-##### 3.4.3.3 Codis de resultat <a name="3.4.3.3"></a>
+##### 3.5.3.3 Codis de resultat <a name="3.5.3.3"></a>
 
 <ul>
 	<li>1000: Titular identificat <br/> Si ha presentat declaració d’IRPF en l’exercici sol·licitat es faciliten les dades de renda de la persona declarant (TipoRespuesta = IR; DL, per exercicis iguals i posteriors a 2020).<br>Si el contribuent no presenta declaració d’IRPF per no tenir-hi obligació (TipoRespuesta = IM), es subministren set dades de renda procedents d’imputacions de tercers que corresponen a:<br>1. Rendiments del treball.
@@ -414,7 +459,7 @@ La següent modalitat permet obtenir el certificat IRPF d’un contribuent en un
 
 </ul>
 
-### 3.4.4 Resposta – dades específiques (exercicis 2020 i posteriors) <a name="3.4.4"></a>
+### 3.5.4 Resposta – dades específiques (exercicis 2020 i posteriors) <a name="3.5.4"></a>
 
 El servei de l'IRPF presenta canvis al bloc <i>DatosEspecificos</i> de la missatgeria de resposta a partir
 de l'exercici 2020 segons el següent schema. En aquests casos, es retornen totes les caselles de la
@@ -466,7 +511,7 @@ es resoldria contra aquesta entrada del diccionar
 
 >SUMTPRNP=[/DatosEconomicos/Resultados/RdtoTrabajoRes/SUMTPRNP][N102][0018][Suma de rendimientos netos previos (suma de las casillas [0017])]
 
-## 3.5 Certificats de renda d’un contribuent (Cx)<a name="3.5"></a>
+## 3.6 Certificats de renda d’un contribuent (Cx)<a name="3.6"></a>
 
 Les següents modalitats permeten obtenir els següents certificats de renda d’un contribuent en un
 exercici fiscal determinat:
@@ -476,12 +521,12 @@ exercici fiscal determinat:
 - C6: Renda per a beques.
 
 
-### 3.5.1 Petició<a name="3.5.1"></a>
+### 3.6.1 Petició<a name="3.6.1"></a>
 
 La missatgeria de petició és idèntica a la de consulta del IRPF (tant pel que fa a les dades genèriques
 com a les específiques).
 
-### 3.5.2 Resposta <a name="3.5.2"></a>
+### 3.6.2 Resposta <a name="3.6.2"></a>
 
 La missatgeria de resposta és idèntica a la de consulta del IRPF.
 A diferència del certificat d’IRPF, en cas que el titular hagi presentat la declaració del IRPF (*TipoRespuesta = IR o DL a partir de l’exercici 2020*) en l’exercici sol·licitat el servei informarà l’element Importes segons correspongui en funció de les dades consultades.
@@ -494,7 +539,7 @@ Si el contribuent no presenta declaració de IRPF per no tenir obligació (*Tipo
 <img align="center" src="img/RespostaConsIRPF.png" />
 </p>
 
-#### 3.5.2.1 Importes <a name="3.5.2.1"></a>
+#### 3.6.2.1 Importes <a name="3.6.2.1"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -503,12 +548,12 @@ Si el contribuent no presenta declaració de IRPF per no tenir obligació (*Tipo
 | //Importes/Importe/Descripcion | Descripció de l’import. |
 | //Importes/Importe/Valor | Valor de l’import. |
 
-## 3.6 Pensions Públiques Exemptes (PPE)<a name="3.6"></a>
+## 3.7 Pensions Públiques Exemptes (PPE)<a name="3.7"></a>
 
 La següent modalitat permet consultar les Pensions Públiques Exemptes d’un contribuent en un
 exercici fiscal determinat	
 
-### 3.6.1 Petició – dades genèriques <a name="3.6.1"></a>
+### 3.7.1 Petició – dades genèriques <a name="3.7.1"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -516,13 +561,13 @@ exercici fiscal determinat
 | //DatosGenericos/Titular/Documentacion  | Documentació. |
 | //DatosGenericos/Titular/NombreCompleto  |  Nom complert del contribuent. Requerit únicament en cas de persona física. <br/> Alternativament es poden informar els elements Nombre, Apellido1 i Apellido2 del mateix bloc Titular.|
 
-### 3.6.2 Petició – dades específiques <a name="3.6.2"></a>
+### 3.7.2 Petició – dades específiques <a name="3.7.2"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
 | peticioConsultaPPE/DatosEspecificos/Ejercicio  | Exercici fiscal. El servei ofereix els darrers 5 exercicis des de la data de sol·licitud. <br><br>Cada exercici estarà disponible al mateix temps que les dades de renda (principis de Juliol). |
 
-### 3.6.3 Petició – dades específiques <a name="3.6.3"></a>
+### 3.7.3 Petició – dades específiques <a name="3.7.3"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -536,7 +581,7 @@ exercici fiscal determinat
 | respostaConsultaIRPF/resultat/resultat/descripcio| Descripció del resultat |
 
 
-#### 3.6.3.1 Pensió Pública Exempta <a name="3.6.3.1"></a>	
+#### 3.7.3.1 Pensió Pública Exempta <a name="3.7.3.1"></a>	
 | _Element_ | _Descripció_ |
 | --- | --- |
 | //PensionPublicaExenta/NifTitular  | NIF del titular. |
@@ -557,7 +602,7 @@ exercici fiscal determinat
 <img align="center" src="img/respostaConsultaPPE.png" />
 </p>
 
-#### 3.6.3.2 Codis de resultat <a name="3.6.3.1"></a>	
+#### 3.7.3.2 Codis de resultat <a name="3.7.3.1"></a>	
 
 <ul>
 	<li>1000: Titular identificat, exercici correcte amb dades.</li>
@@ -567,24 +612,24 @@ exercici fiscal determinat
 	<li>0502: Error en la comunicació amb l’emissor final.</li>
 </ul>
 
-## 3.7 Dades cadastrals (INFOCAT)<a name="3.7"></a>
+## 3.8 Dades cadastrals (INFOCAT)<a name="3.8"></a>
 
 La següent modalitat permet consultar les dades cadastrals d’un contribuent en un exercici fiscal determinat.
 
-### 3.7.1 Petició – dades genèriques <a name="3.7.1"></a>
+### 3.8.1 Petició – dades genèriques <a name="3.8.1"></a>
 | _Element_ | _Descripció_ |
 | --- | --- |
 | //DatosGenericos/Titular/TipoDocumentacion  | Tipus de documentació NIF. |
 | //DatosGenericos/Titular/Documentacion  | Documentació. |
 | //DatosGenericos/Titular/NombreCompleto  | Nom complert del contribuent (primer cognom, segons cognom, nom). Requerit únicament en cas de persona física.<br/> Alternativament es poden informar els elements *nombre*, *Apellido1* i *Apellido2* del mateix bloc *Titular* |
 
-### 3.7.2 Petició – dades específiques <a name="3.7.2"></a>
+### 3.8.2 Petició – dades específiques <a name="3.8.2"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
 | peticioConsultaINFOCAT/DatosEspecificos/Ejercicio | Exercici fiscal. El servei ofereix els darrers 4 exercicis des de la data de sol·licitud. |
 
-### 3.7.3 Resposta – dades específiques <a name="3.7.3"></a>
+### 3.8.3 Resposta – dades específiques <a name="3.8.3"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -596,12 +641,12 @@ La següent modalitat permet consultar les dades cadastrals d’un contribuent e
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronRustica| Bloc de dades corresponent als immobles del Padró de Rústica. |
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronRustica/NumeroRegistrosExistentesPRU | Número total de registres de immobles existents del Padró de Rústica pel NIF i exercicis sol·licitats |
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronRustica/NumeroRegistrosFacilitadosPRU | Número total de registres de immobles facilitats del Padró de Rústica pel NIF i exercicis sol·licitats. |
-| respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronRustica/DatosInmueble | Dades de l’immoble. Per més detalls vegeul’apartat [3.7.3.1](#3.7.3.1) d’aquest document. |
+| respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronRustica/DatosInmueble | Dades de l’immoble. Per més detalls vegeul’apartat [3.8.3.1](#3.8.3.1) d’aquest document. |
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronUrbana | Bloc de dades corresponent als immobles del Padró d’Urbana. |
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronUrbana/NumeroRegistrosExistentesPUR | Número total de registres de immobles existents del Padró d’Urbana pel NIF i exercicis sol·licitats. |
 | respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronUrbana/NumeroRegistrosFacilitadosPUR | Número total de registres de immobles facilitats del Padró d’Urbana pel NIF i exercicis sol·licitats. |
-| respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronUrbana/DatosInmueble | Dades de l’immoble. Per més detalls vegeul’apartat [3.7.3.1](#3.7.3.1) d’aquest document. |
-| respostaConsultaINFOCAT/resultat/codiResultat | Codi de resultat de la consulta. Per més detalls vegeu l’apartat [3.7.3.2](#3.7.3.2) d’aquest document. |
+| respostaConsultaINFOCAT/DatosEspecificos/InmueblesPadronUrbana/DatosInmueble | Dades de l’immoble. Per més detalls vegeul’apartat [3.8.3.1](#3.8.3.1) d’aquest document. |
+| respostaConsultaINFOCAT/resultat/codiResultat | Codi de resultat de la consulta. Per més detalls vegeu l’apartat [3.8.3.2](#3.8.3.2) d’aquest document. |
 | respostaConsultaIRPF/resultat/resultat/descripcio | Descripció del resultat. |
 
 
@@ -609,7 +654,7 @@ La següent modalitat permet consultar les dades cadastrals d’un contribuent e
 <img align="center" src="img/resConsultaIINFOCAT.png" />
 </p>
 
-#### 3.7.3.1 Codis de resultat <a name="3.7.3.1"></a>
+#### 3.8.3.1 Codis de resultat <a name="3.8.3.1"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -637,7 +682,7 @@ La següent modalitat permet consultar les dades cadastrals d’un contribuent e
 <img align="center" src="img/datosInmueble.png" />
 </p>
 
-#### 3.7.3.2 Codis de resultat <a name="3.7.3.2"></a>
+#### 3.8.3.2 Codis de resultat <a name="3.8.3.2"></a>
 
 <ul>
 	<li>1000: Titular identificat, exercici correcte amb dades.</li>
@@ -647,9 +692,9 @@ La següent modalitat permet consultar les dades cadastrals d’un contribuent e
 	<li>0502: Error en la comunicació amb l’emissor final.</li>
 </ul>
 
-## 3.8 Verificació de NIF – qualitat de dades identificatives(VALIDAR_NIF) <a name="3.8"></a>
+## 3.9 Verificació de NIF – qualitat de dades identificatives(VALIDAR_NIF) <a name="3.9"></a>
 
-### 3.8.1 Petició – dades especifiques <a name="3.8.1"></a>
+### 3.9.1 Petició – dades especifiques <a name="3.9.1"></a>
 | _Element_ | _Descripció_ |
 | --- | --- |
 | peticioVerificacioNIF/contribuent  | Bloc de dades corresponent a les dades del contribuent a validar. |
@@ -660,7 +705,7 @@ La següent modalitat permet consultar les dades cadastrals d’un contribuent e
 <img align="center" src="img/verificarNIF.png" />
 </p>
 
-### 3.8.2 Resposta – dades específiques <a name="3.8.2"></a>
+### 3.9.2 Resposta – dades específiques <a name="3.9.2"></a>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -674,6 +719,8 @@ La següent modalitat permet consultar les dades cadastrals d’un contribuent e
 <p align="center">
 <img align="center" src="img/respostaVerificacioNIF.png" />
 </p>
+
+
 
 
 
