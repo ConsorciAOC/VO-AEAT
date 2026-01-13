@@ -22,7 +22,8 @@ Podreu trobar els XSD's del servei en aquest repositori sota el directori [/sche
 		* [3.2.2 Resposta – dades específiques](#3.2.2)
    * [3.3. Consulta d’estar al corrent de pagament d’obligacions tributàries (ECOT10X)](#3.3)
    		* [3.3.1 Petició – dades genèriques](#3.3.1)
-   		* [3.3.2 Resposta – dades específiques](#3.3.2)
+   		* [3.3.2 Petició – dades específiques](#3.3.2)
+		* [3.3.3 Resposta – dades específiques](#3.3.3)
    * [3.4. Consulta d’estar al corrent de pagament d’obligacions tributàries – genèric (ECOTGEN)](#3.4)
 		* [3.4.1 Petició – dades genèriques](#3.4.1)
 		* [3.4.2 Petició – dades específiques](#3.4.2)
@@ -225,9 +226,18 @@ En les respostes s'indica el caràcter positiu o negatiu de la certificació i e
 | //DatosGenericos/Titular/Documentacion | Documentació. |
 | //DatosGenericos/Titular/NombreCompleto|  Nom complert del contribuent. Requerit únicament en cas de persona física. <br/> Alternativament es poden informar els elements *Nombre, Apellido1* i *Apellido2* del mateix bloc *Titular*. |
 
+### 3.3.2	Petició – dades especifiques <a name="3.3.2"></a>
+
+<p align="center">
+<img align="center" src="img/ECOTX.png" />
+</p>
+
+|*Element*| *Descripció*|
+| --- | --- |
+| //peticioConsultaObligacionsTributaries/dataPassada| Data a la que es vol realitzar la consulta (AAAA-MM-DD). Opcional. |
 
 
-### 3.3.2 Resposta – dades específiques <a name="3.3.2"></a>
+### 3.3.3 Resposta – dades específiques <a name="3.3.3"></a>
 
 <p align="center">
 <img align="center" src="img/resConsultaOblTributaries.png" />
@@ -235,6 +245,7 @@ En les respostes s'indica el caràcter positiu o negatiu de la certificació i e
 
 |*Element*| *Descripció*|
 | --- | --- |
+| respostaConsultaObligacionsTributaries/peticioConsultaObligacionsTributaries| Si s’informa, bloc de dades especifiques informat a la petició. |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>Referencia| Referència única de la resposta. |
 | respostaConsultaObligacionsTributaries/DatosEspecificos<br/>FechaEmision| Data en la que és vàlida la resposta (AAAA-MM-DD). |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/CodigoCertificado | Indica si el contribuent està al corrent o no de obligacions tributàries. Els possibles valors que pot tenir són POSITIVO o NEGATIVO. |
@@ -248,7 +259,7 @@ En les respostes s'indica el caràcter positiu o negatiu de la certificació i e
 | respostaConsultaObligacionsTributaries/resultat/descripcio| Descripció del resultat. |
 
 
-#### 3.3.2.1 Codis de la causa de la negativitat <a name="3.3.2.1"></a>
+#### 3.3.3.1 Codis de la causa de la negativitat <a name="3.3.3.1"></a>
 
 |*Tipus negatiu*| *Causa negativitat*|
 | --- | --- |
@@ -270,7 +281,7 @@ En les respostes s'indica el caràcter positiu o negatiu de la certificació i e
 | V | "No está al corriente de pago de deudas tributarias en periodo ejecutivo, delito fiscal y baja censal detectada"  |
 | X | "No está al corriente de obligaciones tributarias por incumplimiento de presentación de declaraciones o autoliquidaciones, constancia de deudas tributarias en periodo ejecutivo y baja censal detectada"  |
 
-#### 3.3.2.2 Codis de resultat <a name="3.3.2.2"></a>
+#### 3.3.3.2 Codis de resultat <a name="3.3.3.2"></a>
 
 <ul>
 	<li>1000: Titular identificat.</li>
