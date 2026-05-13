@@ -488,8 +488,7 @@ Per tal de conèixer el significat dels elements de la resposta de cada exercici
 de dades que està publicat a la seu electrònica de l'AEAT:
 
 https://sede.agenciatributaria.gob.es/Sede/ayuda/disenos-registro/modelos-100-199.html ->
-https://sede.agenciatributaria.gob.es/static_files/Sede/Disenyo_registro/DR_100_199/archivos_24/diccionarioXSD_2024.properties
-
+https://sede.agenciatributaria.gob.es/static_files/Sede/Disenyo_registro/DR_100_199/diccionarioXSD_2025.properties
 
 Pel que fa al diccionari i als paràmetres de les dades subministrades, s'han d'interpretar de la següent manera:
 
