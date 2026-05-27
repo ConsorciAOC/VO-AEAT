@@ -248,7 +248,7 @@ En les respostes s'indica el caràcter positiu o negatiu de la certificació i e
 | respostaConsultaObligacionsTributaries/peticioConsultaObligacionsTributaries| Si s’informa, bloc de dades especifiques informat a la petició. |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>Referencia| Referència única de la resposta. |
 | respostaConsultaObligacionsTributaries/DatosEspecificos<br/>FechaEmision| Data en la que és vàlida la resposta (AAAA-MM-DD). |
-| respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/CodigoCertificado | Indica si el contribuent està al corrent o no de obligacions tributàries. Els possibles valors que pot tenir són POSITIVO o NEGATIVO. |
+| respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/CodigoCertificado | Indica si el contribuent està al corrent o no de obligacions tributàries. Els possibles valors que pot tenir són POSITIVO, NEGATIVO o SITUACION ESPECIAL*.<br><br><n>*SITUACION ESPECIAL: No es poden facilitar dades automàticament a l’Administració sol·licitant. S’ha de requerir un certificat a la persona interessada.  |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/TipoNegativo| Codi de la causa en cas de no estar al corrent de pagament. Per més detalls vegeu l’apartat d’aquest [3.4.2.1](#3.4.2.1) document |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/Incumplimientos/NumeroRegistrosExistentes | Número total d’incompliments |
 | respostaConsultaObligacionsTributaries/DatosEspecificos/<br/>ObligacionesTributarias/Incumplimientos/NumeroRegistrosFacilitados | Número d’incompliments. |
